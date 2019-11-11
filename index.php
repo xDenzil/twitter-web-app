@@ -29,9 +29,9 @@ if (!isset($_SESSION['access_token'])) {
 
 foreach($statuses as $key => $status){
     $arrStatus=[];
-    $arrStatus['$created_at'] = $status->created_at;
-    $arrStatus['$created_by'] = $content->name;
-    $arrStatus['$message'] = $status->text;
+    $arrStatus['created_at'] = $status->created_at;
+    $arrStatus['created_by'] = $content->name;
+    $arrStatus['message'] = $status->text;
     $arrStatuses[] = $arrStatus;
 }
     print_r($arrStatuses);
@@ -73,7 +73,26 @@ foreach($statuses as $key => $status){
                 </div>
             </div>
             <div class="row people">
-                <div class="col-md-6 col-lg-4 item">
+
+                <?php 
+                    foreach ($arrStatuses as $key => $arrStatus){
+                        echo("
+                        <div class='col-md-6 col-lg-4 item'>
+                        <div class='box'>
+                            <p class='description'>" . $arrStatus['message'] . "</p>
+                        </div>
+                        <div class='author'><img class='rounded-circle' src='$pimage'>
+                            <h5 class='name'>$pname</h5>
+                            <p class='title'> " . $arrStatus['created_at'] . "</p>
+                        </div>
+                    </div>
+                        
+                        
+                        ");
+                    }
+                
+                ?>
+                <!-- <div class="col-md-6 col-lg-4 item">
                     <div class="box">
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
                     </div>
@@ -81,7 +100,9 @@ foreach($statuses as $key => $status){
                         <h5 class="name"><?php echo($pname); ?></h5>
                         <p class="title">CEO of Company Inc.</p>
                     </div>
-                </div>
+                </div> -->
+
+
             </div>
         </div>
     </div>
