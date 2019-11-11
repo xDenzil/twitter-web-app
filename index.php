@@ -35,8 +35,7 @@ if (!isset($_SESSION['access_token'])) {
 
     $pimage = $content->profile_image_url;
     $pname = $content->name;
-    echo $pimage;
-    //echo "<pre>";
+
 
 }
 ?>
