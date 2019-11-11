@@ -24,14 +24,15 @@ if (!isset($_SESSION['access_token'])) {
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $content = $connection->get("account/verify_credentials");
-    $status = $connection->get("statuses/user_timeline", ["screen_name"=>$content->screen_name, "count"=>5]);
+    $statuses = $connection->get("statuses/user_timeline", ["screen_name"=>$content->screen_name, "count"=>5]);
     //$contentArr = json_decode($content,true);
 
-foreach($status as $key => $status){
+foreach($statuses as $key => $status){
     $arrStatus=[];
     $arrStatus['$created_at'] = $status->created_at;
     $arrStatus['$created_by'] = $content->name;
     $arrStatus['$message'] = $status->text;
+    $arrStatuses[] = $arrStatus;
 }
     print_r($arrStatus);
 
