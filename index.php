@@ -22,21 +22,22 @@ if (!isset($_SESSION['access_token'])) {
     //echo('hello');
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
-    $content = $connection->get("statuses/user_timeline", ["count" => 10, "exclude_replies" => true]);
+    $content = $connection->get("statuses/user_timeline", ["count" => 20, "exclude_replies" => true]);
     $contentArr = json_decode($content,true);
     
-    echo "<pre>";
+
     print_r($contentArr);
-    echo "<pre>";
+   
     //echo $content->status->text;
 
     //echo "<pre>";
     //print_r($content);
     //echo "<pre>";
     
-}?>
+}
 
-<!-- <!DOCTYPE html>
+
+/* <!DOCTYPE html>
 <html>
 
 <head>
@@ -79,4 +80,4 @@ if (!isset($_SESSION['access_token'])) {
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-</html> -->
+</html>  */
