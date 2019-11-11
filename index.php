@@ -24,7 +24,7 @@ if (!isset($_SESSION['access_token'])) {
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $content = $connection->get("statuses/user_timeline", ["count" => 25, "exclude_replies" => true]);
     $contentArr = json_decode($content,true);
-    print_r($content);
+    print_r($contentArr);
     //echo $content->status->text;
 
     //echo "<pre>";
