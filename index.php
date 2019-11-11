@@ -24,7 +24,7 @@ if (!isset($_SESSION['access_token'])) {
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $content = $connection->get("account/verify_credentials");
-    $statuses = $connection->get("statuses/user_timeline", ["screen_name"=>'tuwanie', "count"=>5]);
+    $statuses = $connection->get("statuses/home_timeline", ["screen_name"=>$content->name, "count"=>9]);
     //$contentArr = json_decode($content,true);
 
 foreach($statuses as $key => $status){
@@ -32,6 +32,7 @@ foreach($statuses as $key => $status){
     $arrStatus['created_at'] = $status->created_at;
     $arrStatus['created_by'] = $status->name;
     $arrStatus['message'] = $status->text;
+    $arrStatus['pimage'] = $status->profile_image_url_https;
     $arrStatuses[] = $arrStatus;
 }
 
@@ -40,8 +41,8 @@ foreach($statuses as $key => $status){
     //echo $content->status->text;
 
 
-    $pimage = $status->profile_image_url;
-    $pname = $content->name;
+    //$pimage = $status->profile_image_url;
+    //$pname = $content->name;
 
 
 }
@@ -82,8 +83,8 @@ foreach($statuses as $key => $status){
                         <div class='box'>
                             <p class='description'>" . $arrStatus['message'] . "</p>
                         </div>
-                        <div class='author'><img class='rounded-circle' src='$pimage'>
-                            <h5 class='name'>$pname</h5>
+                        <div class='author'><img class='rounded-circle' src='" . $arrStatus['pimage'] . "'>
+                            <h5 class='name'>" . $arrStatus['created_by'] . "</h5>
                             <p class='title'> " . $arrStatus['created_at'] . "</p>
                         </div>
                     </div>
