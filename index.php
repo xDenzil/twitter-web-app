@@ -30,7 +30,7 @@ if (!isset($_SESSION['access_token'])) {
 foreach($statuses as $key => $status){
     $arrStatus=[];
     $arrStatus['created_at'] = $status->created_at;
-    $arrStatus['created_by'] = $content->name;
+    $arrStatus['created_by'] = $status->name;
     $arrStatus['message'] = $status->text;
     $arrStatuses[] = $arrStatus;
 }
@@ -40,7 +40,7 @@ foreach($statuses as $key => $status){
     //echo $content->status->text;
 
 
-    $pimage = $content->profile_image_url;
+    $pimage = $status->profile_image_url;
     $pname = $content->name;
 
 
