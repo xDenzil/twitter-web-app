@@ -104,6 +104,38 @@ foreach($statuses as $key => $status){
             </div>
         </div>
     </div>
+    <div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>References</h3>
+                    <ul>
+                        <li><a href="https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline">Twitter API Docs</a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="https://twitteroauth.com">TwitterOAuth</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=t5hD96EYAtU&amp;list=PLmpuiTmSb3xBT_j9DO2T2l4iq6J9TVVSf&amp;index=1">Youtube Tutorial</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Group Members</h3>
+                    <ul>
+                        <li><a href="#">Denzil Williams</a></li>
+                        <li><a href="#">Kelleshia Kinlocke</a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Web Systems Implementation &amp; Design</h3>
+                    <p>Presentation Date: Nov 11, 2019.</p>
+                </div>
+                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Company Name © 2017</p>
+        </div>
+    </footer>
+</div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
