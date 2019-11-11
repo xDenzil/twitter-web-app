@@ -26,13 +26,13 @@ if (!isset($_SESSION['access_token'])) {
     $contentArr = json_decode($content,true);
     
 
-    print_r($contentArr);
+    //print_r($contentArr);
    
     //echo $content->status->text;
 
-    //echo "<pre>";
-    //print_r($content);
-    //echo "<pre>";
+    echo "<pre>";
+    print_r($content);
+    echo "<pre>";
     
 }
 
