@@ -26,6 +26,6 @@ if (!isset($_SESSION['access_token'])) {
     echo "<pre>";
     echo($content);
     echo "</pre>";
-    echo $contennt->status->text;
+    echo $content->status->text;
     
 }
