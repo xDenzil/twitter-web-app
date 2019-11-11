@@ -47,10 +47,8 @@ if (isset($_POST['tweet'])) {
     $tweeting = $connection->post("statuses/update", ["status" => $mytweet]);
     if ($connection->getLastHttpCode() == 200) {
         //tweet sent successfully
-        echo '<script language="javascript">';
-        echo 'alert("Tweet posted successfully")';
-        echo 'window.location = "index.php"';
-        echo '</script>';
+        echo("<SCRIPT LANGUAGE='JavaScript'> window.alert('Succesfully Updated'); window.location.href='https://twitterfeedapi.herokuapp.com/index.php'; </SCRIPT>");
+        
         $_POST['tweet']=null;
         //header('Location: index.php');
     } else {
