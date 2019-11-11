@@ -4,9 +4,9 @@ session_start();
 require 'autoload.php';
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
-define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
-define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
+define('CONSUMER_KEY', '4dvhIGlVuHOAmpcPcB3fEVAOb');
+define('CONSUMER_SECRET', 'uUPC5f9ExMCRHIRVXNxkgXU9NB36RoRVeJIZfFQQUAmVWmZusJ');
+define('OAUTH_CALLBACK', 'https://twitterfeedapi.herokuapp.com/callback.php');
 
 $request_token = [];
 $request_token['oauth_token'] = $_SESSION['oauth_token']; //Get temporary token back from session
