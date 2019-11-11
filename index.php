@@ -20,4 +20,5 @@ if (!isset($_SESSION['access_token'])) {
 } else { 
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $user = $connection->get('account/verify_credentials', ['tweet_mode' => 'extended', 'include_entities' => 'true']);
+    echo $user->status->text;
 }
