@@ -23,6 +23,8 @@ if (!isset($_SESSION['access_token'])) {
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $statuses = $connection->get('statuses/user_timeline", ["count" => 5, "exclude_replies" => true]');
-    //echo($user);
+    echo "<pre>";
+    echo($statuses);
+    echo "<pre>";
     
 }
