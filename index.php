@@ -51,6 +51,7 @@ if (isset($_POST['tweet'])) {
         echo 'alert("Tweet posted successfully")';
         echo '</script>';
         $_POST['tweet']=null;
+        header('Location: index.php');
     } else {
         // tweet failed
         echo '<script language="javascript">';
