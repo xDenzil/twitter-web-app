@@ -32,14 +32,15 @@ foreach($statuses as $key => $status){
     $arrStatus['created_at'] = $status->created_at;
     $arrStatus['created_by'] = $status->user->name;
     $arrStatus['message'] = $status->text;
-    $arrStatus['pimage'] = $status->user->profile_image_url_https;
+    $arrStatus['pimage'] = $status->user->profile_image_url;
     $arrStatuses[] = $arrStatus;
 }
 
     echo($content->screen_name);
 
-    //echo $content->status->text;
-
+    echo $status->user->profile_image_url;
+    
+    echo $statuses->user->name;
 
     //$pimage = $status->profile_image_url;
     //$pname = $content->name;
@@ -85,7 +86,7 @@ foreach($statuses as $key => $status){
                         </div>
                         <div class='author'><img class='rounded-circle' src='" . $arrStatus['pimage'] . "'>
                             <h5 class='name'>" . $arrStatus['created_by'] . "</h5>
-                            <p class='title'> " . $arrStatus['created_at'] . "</p>
+                            <p class='title'>" . $arrStatus['created_at'] . "</p>
                         </div>
                     </div>
                         
