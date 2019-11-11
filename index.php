@@ -33,6 +33,7 @@ if (!isset($_SESSION['access_token'])) {
 
 
     $pimage = $content->profile_image_url;
+    $pname = $content->name;
     echo $pimage;
     //echo "<pre>";
 
@@ -71,7 +72,7 @@ if (!isset($_SESSION['access_token'])) {
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
                     </div>
                     <div class="author"><img class="rounded-circle" src="<?php echo($pimage); ?>">
-                        <h5 class="name"><?php echo 'test' ?></h5>
+                        <h5 class="name"><?php echo($pname); ?></h5>
                         <p class="title">CEO of Company Inc.</p>
                     </div>
                 </div>
