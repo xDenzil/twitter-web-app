@@ -103,8 +103,8 @@ foreach($statuses as $key => $status){
 
             </div>
         </div>
-    </div>
-    <div class="footer-dark">
+
+        <div class="footer-dark">
     <footer>
         <div class="container">
             <div class="row">
@@ -129,12 +129,13 @@ foreach($statuses as $key => $status){
                     <h3>Web Systems Implementation &amp; Design</h3>
                     <p>Presentation Date: Nov 11, 2019.</p>
                 </div>
-                <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
             </div>
-            <p class="copyright">Company Name © 2017</p>
+            <p class="copyright">Denzil &amp; Kelleshia © 2019</p>
         </div>
     </footer>
 </div>
+    </div>
+    
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
