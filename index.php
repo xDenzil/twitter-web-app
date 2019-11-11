@@ -34,7 +34,7 @@ foreach($statuses as $key => $status){
     $arrStatus['$message'] = $status->text;
     $arrStatuses[] = $arrStatus;
 }
-    print_r($arrStatus);
+    print_r($arrStatuses);
 
     //echo $content->status->text;
 
