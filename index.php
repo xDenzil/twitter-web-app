@@ -34,7 +34,8 @@ foreach($statuses as $key => $status){
     $arrStatus['message'] = $status->text;
     $arrStatuses[] = $arrStatus;
 }
-    print_r($arrStatuses);
+
+    echo($content->screen_name);
 
     //echo $content->status->text;
 
