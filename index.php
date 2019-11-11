@@ -50,6 +50,7 @@ if (isset($_POST['tweet'])) {
         echo '<script language="javascript">';
         echo 'alert("Tweet posted successfully")';
         echo '</script>';
+        $_POST['tweet']=null;
     } else {
         // tweet failed
         echo '<script language="javascript">';
@@ -57,6 +58,8 @@ if (isset($_POST['tweet'])) {
         echo '</script>';
     }
 }
+
+
 ?>
 
 <!DOCTYPE html>
