@@ -6,9 +6,9 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 session_start();
 
-define('CONSUMER_KEY', getenv('CONSUMER_KEY'));
-define('CONSUMER_SECRET', getenv('CONSUMER_SECRET'));
-define('OAUTH_CALLBACK', getenv('OAUTH_CALLBACK'));
+define('CONSUMER_KEY', '4dvhIGlVuHOAmpcPcB3fEVAOb');
+define('CONSUMER_SECRET', 'uUPC5f9ExMCRHIRVXNxkgXU9NB36RoRVeJIZfFQQUAmVWmZusJ');
+define('OAUTH_CALLBACK', 'https://twitterfeedapi.herokuapp.com/callback.php');
 
 if (!isset($_SESSION['access_token'])) {
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET);
