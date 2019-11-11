@@ -24,7 +24,7 @@ if (!isset($_SESSION['access_token'])) {
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $content = $connection->get("account/verify_credentials");
-    $statuses = $connection->get("statuses/home_timeline", ["screen_name"=>$content->screen_name, "count"=>5]);
+    $statuses = $connection->get("statuses/home_timeline", ["screen_name"=>$content->screen_name, "count"=>9]);
     //$contentArr = json_decode($content,true);
 
 foreach($statuses as $key => $status){
@@ -36,11 +36,6 @@ foreach($statuses as $key => $status){
     $arrStatus['uname'] = $status->user->name;
     $arrStatuses[] = $arrStatus;
 }
-
-    echo($content->screen_name);
-
-    //echo $content->status->text;
-
 
     $pimage = $content->profile_image_url;
     $pname = $content->name;
@@ -65,7 +60,7 @@ foreach($statuses as $key => $status){
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">TwitterOAuth - PHP API<br>Live Example</h2>
-                <p class="text-center">Here are your most recent tweets.</p>
+                <p class="text-center">Here are the most recent tweets on your feed.</p>
             </div>
             <div class="row">
                 <div class="col col-6 mx-auto mt-3">
