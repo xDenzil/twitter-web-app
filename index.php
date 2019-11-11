@@ -49,7 +49,6 @@ if (isset($_POST['tweet'])) {
         //tweet sent successfully
         echo '<script language="javascript">';
         echo 'alert("Tweet posted successfully")';
-        echo 'window.location = "https://twitterfeedapi.herokuapp.com/index.php"';
         echo '</script>';
         $_POST['tweet']=null;
         //header('Location: index.php');
