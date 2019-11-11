@@ -32,6 +32,8 @@ foreach($statuses as $key => $status){
     $arrStatus['created_at'] = $status->created_at;
     $arrStatus['created_by'] = $status->name;
     $arrStatus['message'] = $status->text;
+    $arrStatus['pp'] = $status->user->profile_image_url;
+    $arrStatus['uname'] = $status->user->name;
     $arrStatuses[] = $arrStatus;
 }
 
@@ -82,8 +84,8 @@ foreach($statuses as $key => $status){
                         <div class='box'>
                             <p class='description'>" . $arrStatus['message'] . "</p>
                         </div>
-                        <div class='author'><img class='rounded-circle' src='$pimage'>
-                            <h5 class='name'>$pname</h5>
+                        <div class='author'><img class='rounded-circle' src='". $arrStatus['pp'] . "'>
+                            <h5 class='name'>". $arrStatus['uname'] . "</h5>
                             <p class='title'> " . $arrStatus['created_at'] . "</p>
                         </div>
                     </div>
