@@ -25,7 +25,7 @@ if (!isset($_SESSION['access_token'])) {
     $content = $connection->get("account/verify_credentials");
     echo $content->status->text;
 
-    echo "pree";
+    echo "<pre>";
     print_r($content);
     echo "<pre>";
     
