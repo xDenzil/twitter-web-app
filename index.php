@@ -1,6 +1,7 @@
 <?php
 
 require 'autoload.php';
+
 use Abraham\TwitterOAuth\TwitterOAuth; // API class, located in autoload.php
 
 
@@ -18,26 +19,26 @@ if (!isset($_SESSION['access_token'])) {
     $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
     $url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token'])); //Send to Twitter's Authorization page
     header('Location: ' . $url);
-} else { 
+} else {
     //echo('hello');
     $access_token = $_SESSION['access_token'];
     $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
     $content = $connection->get("statuses/user_timeline", ["count" => 20, "exclude_replies" => true]);
-    $contentArr = json_decode($content,true);
-    
+    //$contentArr = json_decode($content,true);
+
 
     //print_r($contentArr);
-   
+
     //echo $content->status->text;
 
-    echo "<pre>";
-    print_r($content);
-    echo "<pre>";
-    
+
+    $pimage = $content->profile_image_url;
+    //echo "<pre>";
+
 }
+?>
 
-
-/* <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -68,7 +69,7 @@ if (!isset($_SESSION['access_token'])) {
                     <div class="box">
                         <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est.</p>
                     </div>
-                    <div class="author"><img class="rounded-circle" src="assets/img/1.jpg">
+                    <div class="author"><img class="rounded-circle" src="<?php echo($pimage); ?>">
                         <h5 class="name"><?php echo 'test' ?></h5>
                         <p class="title">CEO of Company Inc.</p>
                     </div>
@@ -80,4 +81,4 @@ if (!isset($_SESSION['access_token'])) {
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-</html>  */
+</html>
